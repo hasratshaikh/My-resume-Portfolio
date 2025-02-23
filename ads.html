@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Resume Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #14192c;
+            color: #fff;
+        }
+    
+        .heading {
+            text-align: center;
+            padding: 10px 0;
+            color: #ffea00;
+            font-size: 2.5em;
+            font-weight: 700;
+        }
+        .description {
+            text-align: center;
+            padding: 5px;
+            font-size: 1.1em;
+            max-width: 80%;
+            margin: 0 auto;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .work-item {
+            width: 30%;
+            margin: 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .work-item:hover {
+            transform: scale(1.05);
+        }
+        .work-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+        .work-item h3 {
+            text-align: center;
+            font-size: 1.2em;
+            margin-top: 10px;
+            color: #fff;
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+        }
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .work-item {
+                width: 45%; /* 2 images per row for tablets */
+            }
+        }
+        @media (max-width: 768px) {
+            .work-item {
+                width: 100%; /* 1 image per row for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1 class="heading">Digital Marketing & Brand Strategy</h1>
+        <p class="description">
+            Digital marketing is the modern-day game changer for businesses, offering endless opportunities to connect with audiences in the digital world. It harnesses the power of online platforms like social media, search engines, email, and content to create engaging, impactful campaigns that resonate with your target market. From boosting your brand's visibility through SEO to crafting compelling social media ads, digital marketing gives you the tools to not only reach but captivate your audience. With real-time tracking and data-driven insights, it allows you to refine your strategies for maximum impact, making it the most cost-effective and results-oriented way to grow your brand and foster lasting customer relationships.  </p>
+    </section>
+
+    <div class="container">
+        <div class="work-item" onclick="openLightbox('brand 6.jpg')">
+            <img src="insta.jpg" alt="Clothing Store Website">
+            <h3>Boost Your Sales</h3>
+        </div>
+        <div class="work-item" onclick="openLightbox('brand 7.jpg')">
+            <img src="brand 7.jpg" alt="Accessories Store">
+            <h3>Your Brands Needs</h3>
+        </div>
+        <div class="work-item" onclick="openLightbox('branding 2.jpg')">
+            <img src="branding 2.jpg" alt="T-shirt Store">
+            <h3>Social Media branding</h3>
+        </div>
+        <div class="work-item" onclick="openLightbox('campaigns.jpg')">
+            <img src="campaigns.jpg" alt="Tourism Website">
+            <h3>Instagram & Facebook Ads</h3>
+        </div>
+        <div class="work-item" onclick="openLightbox('marke.jpg')">
+            <img src="marke.jpg" alt="Resume Portfolio">
+            <h3>Branding & Promotion</h3>
+        </div>
+        <div class="work-item" onclick="openLightbox('insta.jpg')">
+            <img src="brand 6.jpg" alt="Freelancing Portfolio">
+            <h3>Instagram Branding</h3>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" src="" alt="Full Image">
+    </div>
+
+    <script>
+        function openLightbox(imageSrc) {
+            document.getElementById("lightbox-img").src = imageSrc;
+            document.getElementById("lightbox").style.display = "flex";
+        }
+
+        function closeLightbox() {
+            document.getElementById("lightbox").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Resume Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #14192c;
+            color: #fff;
+        }
+    
+        .heading {
+            text-align: center;
+            padding: 5px 0;
+            color: #ffea00;
+            font-size: 2.5em;
+            font-weight: 700;
+        }
+        .description {
+            text-align: center;
+            padding: 5px;
+            font-size: 1.1em;
+            max-width: 80%;
+            margin: 0 auto;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .work-item {
+            width: 30%;
+            margin: 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .work-item:hover {
+            transform: scale(1.05);
+        }
+        .work-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+        .work-item h3 {
+            text-align: center;
+            font-size: 1.2em;
+            margin-top: 10px;
+            color: #fff;
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+        }
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .work-item {
+                width: 45%; /* 2 images per row for tablets */
+            }
+        }
+        @media (max-width: 768px) {
+            .work-item {
+                width: 100%; /* 1 image per row for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1 class="heading">Website Design & UX/UI Development</h1>
+        <p class="description">
+            I specialize in crafting visually appealing and highly functional websites tailored to meet the needs of businesses and individuals alike. With a keen eye for design and a focus on user experience, I have developed websites across various industries, including e-commerce, personal portfolios, and service-based platforms. Below are a few examples of my work.
+        </p>
+    </section>
+
+    <div class="container">
+        <div class="work-item" onclick="openLightbox('clothing store.jpg')">
+            <img src="site 4.webp" alt="Clothing Store Website">
+            <h3>Clothing Store Website</h3>
+        </div>
+        <div class="work-item" onclick="openLightbox('site 2.webp')">
+            <img src="site 2.webp" alt="Accessories Store">
+            <h3>Accessories Store</h3>
+        </div>
+        <div class="work-item" onclick="openLightbox('site 5.webp')">
+            <img src="site 5.webp" alt="T-shirt Store">
+            <h3>T-shirt Store</h3>
+        </div>
+        <div class="work-item" onclick="openLightbox('site 4.webp')">
+            <img src="clothing store.jpg" alt="Tourism Website">
+            <h3>Tourism Website</h3>
+        </div>
+        <div class="work-item" onclick="openLightbox('site resume.jpg')">
+            <img src="site resume.jpg" alt="Resume Portfolio">
+            <h3>Resume Portfolio</h3>
+        </div>
+        <div class="work-item" onclick="openLightbox('site port.jpg')">
+            <img src="site port.jpg" alt="Freelancing Portfolio">
+            <h3>Freelancing Portfolio</h3>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" src="" alt="Full Image">
+    </div>
+
+    <script>
+        function openLightbox(imageSrc) {
+            document.getElementById("lightbox-img").src = imageSrc;
+            document.getElementById("lightbox").style.display = "flex";
+        }
+
+        function closeLightbox() {
+            document.getElementById("lightbox").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
